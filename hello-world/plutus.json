@@ -1,0 +1,124 @@
+{
+  "preamble": {
+    "title": "schwarzer-swan/hello-world",
+    "description": "Aiken contracts for project 'schwarzer-swan/hello-world'",
+    "version": "0.0.0",
+    "plutusVersion": "v2",
+    "compiler": {
+      "name": "Aiken",
+      "version": "v1.0.26-alpha+unknown"
+    },
+    "license": "Apache-2.0"
+  },
+  "validators": [
+    {
+      "title": "hello_world.hello_world",
+      "datum": {
+        "title": "datum",
+        "schema": {
+          "$ref": "#/definitions/hello_world~1Datum"
+        }
+      },
+      "redeemer": {
+        "title": "redeemer",
+        "schema": {
+          "$ref": "#/definitions/hello_world~1Redeemer"
+        }
+      },
+      "compiledCode": "58e901000032323232323223223225333006323253330083371e6eb8c008c028dd5002a4410d48656c6c6f2c20576f726c642100100114a06644646600200200644a66601c00229404c94ccc030cdc79bae301000200414a226600600600260200026eb0c02cc030c030c030c030c030c030c030c030c024dd5180098049baa002375c600260126ea80188c02c0045261365653330043370e900018029baa001132325333009300b002149858dd7180480098031baa0011653330023370e900018019baa0011323253330073009002149858dd7180380098021baa001165734aae7555cf2ab9f5742ae881",
+      "hash": "c1fe430f19ac248a8a7ea47db106002c4327e542c3fdc60ad6481103"
+    },
+    {
+      "title": "vesting.vesting",
+      "datum": {
+        "title": "dataum",
+        "schema": {
+          "$ref": "#/definitions/vesting~1Datum"
+        }
+      },
+      "redeemer": {
+        "title": "_redeemr",
+        "schema": {
+          "$ref": "#/definitions/Void"
+        }
+      },
+      "compiledCode": "59019f0100003232323232322323223225333007325332330093001300a3754600460166ea800c4c8c94ccc02ccc008c004c034dd50029bae3004300d3754014294454ccc02ccc008c004c034dd50029bae300f30103010300d37540142664464a66601c600c601e6ea80044c94ccc03cc94ccc04cc04800454ccc040c020c0440045288a999808180718088008a5016163754601060226ea8c020c044dd5002099b880010031337120020066eb4c048c040dd50008a503003300f3754600c601e6ea8008c03cc040c040c040c040c040c040c040c034dd5180098069baa005375a6002601a6ea8028528118078009119198008009bac301030113011301130113011301130113011300e375400644a66602000229404c94ccc038cdc79bae301200200414a226600600600260240026e1d200214a046018601a00229309b2b192999803180218038008a99980498040008a4c2c2c6ea80054ccc00cc004c010dd50010991919191919299980618070010a4c2c6eb8c030004c030008dd7180500098050011bad3008001300537540042c6e1d20005734aae7555cf2ab9f5742ae89",
+      "hash": "eb78a7c93bfffdc9f4225a7821911a670c7fcde177e5a183d3077a4b"
+    }
+  ],
+  "definitions": {
+    "ByteArray": {
+      "dataType": "bytes"
+    },
+    "Int": {
+      "dataType": "integer"
+    },
+    "Void": {
+      "title": "Unit",
+      "description": "The nullary constructor.",
+      "anyOf": [
+        {
+          "dataType": "constructor",
+          "index": 0,
+          "fields": []
+        }
+      ]
+    },
+    "hello_world/Datum": {
+      "title": "Datum",
+      "anyOf": [
+        {
+          "title": "Datum",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "title": "owner",
+              "$ref": "#/definitions/ByteArray"
+            }
+          ]
+        }
+      ]
+    },
+    "hello_world/Redeemer": {
+      "title": "Redeemer",
+      "anyOf": [
+        {
+          "title": "Redeemer",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "title": "msg",
+              "$ref": "#/definitions/ByteArray"
+            }
+          ]
+        }
+      ]
+    },
+    "vesting/Datum": {
+      "title": "Datum",
+      "anyOf": [
+        {
+          "title": "Datum",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "title": "lock_utime",
+              "$ref": "#/definitions/Int"
+            },
+            {
+              "title": "owner",
+              "$ref": "#/definitions/ByteArray"
+            },
+            {
+              "title": "beneficiary",
+              "$ref": "#/definitions/ByteArray"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

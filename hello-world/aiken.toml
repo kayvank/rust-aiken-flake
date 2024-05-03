@@ -1,0 +1,14 @@
+name = "schwarzer-swan/hello-world"
+version = "0.0.0"
+license = "Apache-2.0"
+description = "Aiken contracts for project 'schwarzer-swan/hello-world'"
+
+[repository]
+user = "schwarzer-swan"
+project = "hello-world"
+platform = "github"
+
+[[dependencies]]
+name = "aiken-lang/stdlib"
+version = "1.8.0"
+source = "github"
